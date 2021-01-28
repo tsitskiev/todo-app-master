@@ -1,0 +1,147 @@
+:root {
+  --main-purple: #eb06ff;
+  --main-dark-purple: #b908c9;
+  --main-blue: #1c65d7;
+  --main-darkblue: #041955;
+  --main-bck-blue: #3450a1;
+  --main-white: #ffffff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--main-bck-blue);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.wrapper {
+  position: relative;
+  width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+  background: var(--main-bck-blue);
+  border: 2px solid var(--main-darkblue);
+  border-top: 0;
+  border-radius: 0 0 15px 15px;
+}
+
+.wrapper h2,
+p {
+  text-align: center;
+  color: var(--main-white);
+}
+
+span {
+  margin-left: 35px;
+}
+
+.btn {
+  border: 0;
+  cursor: pointer;
+  transition: 0.4s ease;
+  outline: none;
+}
+.add-btn {
+  background-color: var(--main-purple);
+  color: var(--main-white);
+  width: 100%;
+  border-radius: 10px;
+  font-weight: bold;
+  min-height: 50px;
+}
+.add-btn:hover {
+  background-color: var(--main-dark-purple);
+}
+
+.rm-btn {
+  background: url('./assets/bin.png') center no-repeat;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+}
+
+.rm-btn:hover {
+  background: url('./assets/bin-hover.png') center no-repeat;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+ul {
+  list-style: 'none';
+  margin: 0px;
+  padding: 0px;
+}
+
+ul li {
+  position: relative;
+  display: flex;
+  color: var(--main-white);
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  margin-bottom: 0.5rem;
+  min-height: 35px;
+  background-color: var(--main-darkblue);
+}
+ul li input {
+  margin-right: 1rem;
+}
+input[type='checkbox'] {
+  display: none;
+}
+label::before {
+  content: '';
+  background: url('./assets/blue-round.png') center no-repeat;
+  border-radius: 50%;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: calc(50% - 9px);
+  left: 15px;
+}
+li:nth-child(odd) label:before {
+  background: url('./assets/prpl-round.png') center no-repeat;
+}
+
+input[type='checkbox']:checked + label:before {
+  background: url('./assets/btn-checked.png') center no-repeat;
+}
+
+.todo-input {
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+  min-height: 50px;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 320px) {
+  .add-btn {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 10px;
+    bottom: 10vh;
+    z-index: 999;
+    font-size: 0px;
+    background: url('./assets/add-btn.png') center no-repeat;
+    background-size: cover;
+    transition: 0s;
+  }
+}
