@@ -112,8 +112,14 @@ label::before {
   top: calc(50% - 9px);
   left: 15px;
 }
+label:hover:before {
+  background: url('./assets/prpl-round.png') center no-repeat;
+}
 li:nth-child(odd) label:before {
   background: url('./assets/prpl-round.png') center no-repeat;
+}
+li:nth-child(odd) label:hover:before {
+  background: url('./assets/blue-round.png') center no-repeat;
 }
 
 input[type='checkbox']:checked + label:before {
